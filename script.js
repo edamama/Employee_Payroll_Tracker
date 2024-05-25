@@ -2,60 +2,68 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
+const employeesArray = [];
+
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
-   const infoArray = {
+  
+  while (confirm("Add new employee?")) {
 
-    firstName: prompt("What is the employee's first name?"),
+    const employeeObj = {
+      
+      firstName: prompt("What is this employee's first name?"),
 
-    lastName: prompt("OK. What is the employee's last name?"),
+      lastName: prompt("OK. What is the employee's last name?"),
 
-    salary: prompt("How about the employee's salary?"),
+      salary: prompt("What's this employee's salary?"),
 
-   };
+    }
+
+      if (isNaN(employeeObj.salary)){
+
+        employeeObj.salary = Number(0); 
+
+      } 
+   
+    employeesArray.push(employeeObj);
+
+  } 
+  
+  
+  return employeesArray;
+
+} // probably? don't have to touch this anymore thank god
+
+  
+  
+
+  
+
+ 
 
    
-   while (isNaN(infoArray.salary)){
+   
 
-      alert("You must in input a numerical value for the employee's salary.");
 
-      infoArray.salary = prompt("Again, what is the employee's salary?");
 
-      if(!isNaN(infoArray.salary)){
 
-        break;
+   
 
-      };
 
-   }; // added while loop so it does not proceed
 
- 
- 
-  };
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
+const displayAverageSalary = function() {
 
-  for (indivSalary in employeesArray.salary) {
+ 
 
-    let totalSalary = indivSalary + totalSalary; // probably fix this idk haven't tested it
-
-    avgSalary = (totalSalary / (employeesArray.length - 1));
-
-    console.log("Here is the average salary: " + avgSalary);
-
-
-  }
-  
 }
 
 // Select a random employee
-const getRandomEmployee = function(employeesArray) {
+const getRandomEmployee = function() {
   // TODO: Select and display a random employee
 
-  console.log(employeesArray.firstName[Math.random(0,employeesArray.length - 1)]); // theoretically this works.
-
+  console.log(employeesArray.name[Math.random(0,employeesArray.length - 1)]); //broken
 }
 
 /*
@@ -122,12 +130,4 @@ const trackEmployeeData = function() {
 }
 
 // Add event listener to 'Add Employees' button
-document.getElementById("add-employees-btn").addEventListener("click", trackEmployeeData); // fixed
-
-
-/////////////////////////////////////////////////////////////////////out///////////////////////////////////////////////////
-
-
-
-getRandomEmployee(collectEmployees);
-
+addEmployeesBtn.addEventListener('click', trackEmployeeData);
