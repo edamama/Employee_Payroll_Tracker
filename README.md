@@ -1,6 +1,8 @@
-This is the repository that holds the Employee Payroll Tracker application.
+This is the repository that holds the Employee Payroll Tracker application. You can use it to hold data about your employee's names and salaries.
 
-As a note: salary entries must not be a non-number. In this case, the section will display $0.00 .
+(As a note: salary entries must not be a non-number. In this case, the section will display $0.00 .)
+
+Opening the console will allow you to find more data involving calculations of average salary and the ability to randomly get an employee's name. (You know, just because.)
 
 Here is confirmation that the app works:
 
