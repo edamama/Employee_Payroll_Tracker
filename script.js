@@ -15,55 +15,60 @@ const collectEmployees = function() {
 
       lastName: prompt("OK. What is the employee's last name?"),
 
-      salary: prompt("What's this employee's salary?"),
+      salary: Number(prompt("What's this employee's salary?")),
 
     }
 
       if (isNaN(employeeObj.salary)){
 
-        employeeObj.salary = Number(0); 
+        employeeObj.salary = 0; 
 
       } 
    
     employeesArray.push(employeeObj);
 
-  } 
-  
-  
-  return employeesArray;
+  } return employeesArray;
 
-} // probably? don't have to touch this anymore thank god
-
-  
-  
-
-  
-
- 
-
-   
-   
-
-
-
-
-   
+} 
 
 
 
 
 // Display the average salary
 const displayAverageSalary = function() {
+  
+  let totalSalary = 0;
 
- 
+  for(let i=0; i < employeesArray.length; i++){
 
+    totalSalary = totalSalary + employeesArray[i].salary;
+
+  }
+
+  let avgSalary = totalSalary / employeesArray.length;
+
+
+  console.log("This is the average salary amongst employees: $" + avgSalary);
+  
 }
 
 // Select a random employee
 const getRandomEmployee = function() {
   // TODO: Select and display a random employee
 
-  console.log(employeesArray.name[Math.random(0,employeesArray.length - 1)]); //broken
+  let min = 0;
+
+  let max = employeesArray.length - 1; //for index purposes
+  
+  
+  let random = Math.floor(Math.random() * (+max - +min)) + 
+             +min;
+  
+  
+  
+  console.log("Here's a random employee for you: " + employeesArray[random].firstName + " " + employeesArray[random].lastName);
+
+  //borrowed minmax code from https://www.geeksforgeeks.org/javascript-math-random-method/
 }
 
 /*
