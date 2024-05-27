@@ -14,3 +14,8 @@ If needed, this is the url: https://edamama.github.io/Employee_Payroll_Tracker/
 
 
 Please enjoy the service!
+
+
+Special thanks to: 
+
+https://www.geeksforgeeks.org/javascript-math-random-method/
